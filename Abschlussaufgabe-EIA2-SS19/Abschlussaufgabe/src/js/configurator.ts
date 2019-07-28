@@ -76,7 +76,7 @@ namespace IceAge2019 {
 
         const divCategory: HTMLDivElement = <HTMLDivElement>newElement("div", "category mb-5 border-bottom pb-2", divAllCategories);
         const divCategoryRow: HTMLDivElement = <HTMLDivElement>newElement("div", "category-row row py-2 mb-3", divCategory);
-        const divRowCol: HTMLDivElement = <HTMLDivElement>newElement("div", "col-12 col-sm-9 mb-2 mb-sm-0", divCategoryRow);
+        const divRowCol: HTMLDivElement = <HTMLDivElement>newElement("div", "col-12  col-sm-9 mb-2 mb-sm-0", divCategoryRow);
         const divInputGroup: HTMLDivElement = <HTMLDivElement>newElement("div", "input-group input-group-sm", divRowCol);
 
         const inputCategoryName: HTMLInputElement = <HTMLInputElement>newElement("input", "form-control", divInputGroup);
