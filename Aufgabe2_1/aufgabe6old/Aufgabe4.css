@@ -1,0 +1,34 @@
+#Configurator1 {
+	width:30%;
+
+} 
+#Configurator2 {
+	width:28%;
+
+} 
+
+#Customerinfo{
+	width:28%
+}
+
+
+#buynow{
+	background-color:limegreen;
+	height:50px;
+	width:200px;
+	color:white;
+	border-radius:20px;
+	text-align:center;
+	font-size:40px;
+	
+}
+
+#bestellung{
+	float:left;
+	position:absolute;
+	right:100px;
+	top:50px;
+	border-radius:10px;
+	width:300px;
+}
+

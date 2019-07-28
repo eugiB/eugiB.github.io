@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Aufgabe07</title>
+
+<script src="Aufgabe8.js"></script>
+<script src="Datasheet.js"></script>
+<link rel="stylesheet" type="text/css" href="Aufgabe8.css">
+
+</head>
+<body>
+
+<h1>Christmastree Configurator</h1>
+
+<fieldset class="config" id="trees">
+<legend>Treesort</legend>
+</fieldset>
+
+<fieldset class="config" id="treeholder">
+<legend>Holder </legend>
+</fieldset>
+
+<fieldset class="config" id="lightstring">
+<legend>Lights</legend>
+</fieldset>
+
+<fieldset class="config" id="balls">
+<legend>Christmasballs</legend>
+</fieldset>
+
+<fieldset class="config" id="lametta">
+<legend>Lametta</legend>
+</fieldset>
+
+<fieldset class="config" id="top">
+<legend>Topping</legend>
+</fieldset>
+
+<fieldset class="config" id="Lieferoptionen">
+		<legend> Supplieroptions </legend>
+		<input type="radio" name="Radiogroup" value="Hermes" id="radio2"/>
+		<label for="radio2">Hermes</label>
+		<input type="radio" name="Radiogroup" value="DHL" id="radio3"/>
+		<label for="radio3">DHL</label>
+	</fieldset>
+	
+<fieldset class="config" id="text">
+		<legend> Deliveryoptions </legend>
+		Name and Surname
+		<input type="text" name="Text" placeholder="Type here" required/>
+		<hr/>
+		PLZ
+		<input type="text" name="Pattern" pattern="[0-9]{5}" placeholder="Type here"/>
+		<hr/>
+		Mail
+		<input type="email" name="Mail" placeholder="Type here"/>
+		<hr/>
+		
+	</fieldset>
+	<div id= "cart">
+	</div>
+	
+<!-- <button id="button">Überprüfung</button> -->
+<button id="Async">Async</button>

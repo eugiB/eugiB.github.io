@@ -1,0 +1,67 @@
+#fixed-controls {
+  bottom: 0; }
+
+.modal-overlay {
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); }
+
+.cart-overlay {
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  left: 100% !important;
+  height: 100% !important;
+ }
+  .cart-overlay.active {
+    left: 0 !important; }
+
+  .order-row:hover {
+    background-color: rgba(0, 0, 0, 0.2); }
+
+
+  .item-row:hover {
+    background-color: #0076b64d; }
+
+.page-title {
+  z-index: 200; }
+
+.modal-overlay {
+  z-index: 100; }
+
+.border-thick {
+  border-width: 2px !important; }
+
+.display-4 {
+  letter-spacing: 3px;
+  font-style: oblique; }
+  .display-4 .de {
+    font-size: 1.8rem; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.cart-link {
+  cursor: pointer; }
+  .cart-link .cart-image {
+    height: 60px;
+    width: 60px; }
+
+.overflow-scroll {
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+.cart-overlay .items-wrapper {
+  max-height: 16rem; }
+
+#IceAge {
+  font-size: 60pt;
+}
+
+#logo {
+  margin-top: -20pt;
+}
+
+body{
+  background-color: azure
+}

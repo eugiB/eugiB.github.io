@@ -1,0 +1,87 @@
+{
+	"tree": [
+		{
+			"name": "Christmasballs",
+			"elements": 
+			[
+				{
+					"name": "Douglasie",
+					"price": 25
+				},
+				{
+					"name": "Plastictree",
+					"price":	15
+					},
+					{
+					"name": "Spruce",
+					"price": 20				
+					},
+					{
+					"name": "Colorado fir",
+					"price": 22
+					}
+			]
+		{
+		"height":[
+		{
+		"name": "Height",
+		"elements": [
+				{"name":1,
+				"price": 10
+				},
+				{
+				"name":1.2,
+				"price":15				
+				},
+				{
+				"name":1.4,
+				"price":20				
+				},
+				{
+				"name":1.6,
+				"price":25
+				},
+				{
+				"name":1.8,
+				"price":30
+				},
+				{
+				"name":2,
+				"price":35,
+				}
+		]
+		
+		{
+		"Pot":[
+		{
+		"name": "Pot",
+		"elements":  [
+		{
+		"name":"red",
+		"price":5
+		},
+		{
+		"name":"blue",
+		"price":5
+		},
+		{
+		"name":"white",
+		"price":5
+		},
+		{
+		"name":"black",
+		"price":5
+		}
+		
+		
+		]
+		}
+		
+		
+		
+		]
+		
+		}	
+		
+
+}
