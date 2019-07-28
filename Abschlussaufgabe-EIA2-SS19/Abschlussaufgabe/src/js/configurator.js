@@ -60,7 +60,7 @@ var IceAge2019;
         const divAddButton = document.getElementById("add-category");
         const divCategory = IceAge2019.newElement("div", "category mb-5 border-bottom pb-2", divAllCategories);
         const divCategoryRow = IceAge2019.newElement("div", "category-row row py-2 mb-3", divCategory);
-        const divRowCol = IceAge2019.newElement("div", "col-12  col-sm-9 mb-2 mb-sm-0", divCategoryRow);
+        const divRowCol = IceAge2019.newElement("div", "col-12 col-xl-9 mb-2 mb-sm-0", divCategoryRow);
         const divInputGroup = IceAge2019.newElement("div", "input-group input-group-sm", divRowCol);
         const inputCategoryName = IceAge2019.newElement("input", "form-control", divInputGroup);
         inputCategoryName.setAttribute("type", "text");
@@ -96,7 +96,7 @@ var IceAge2019;
     function addItem(_targetWrapper, _itemName, _itemStock, _itemPrice) {
         const divItemRow = IceAge2019.newElement("div", "row py-2 justify-content-start", null);
         _targetWrapper.insertBefore(divItemRow, _targetWrapper.children[(_targetWrapper.children.length - 1)]);
-        const divItemRowCol = IceAge2019.newElement("div", "col-lg-0 mb-2 mb-sm-0", divItemRow);
+        const divItemRowCol0 = IceAge2019.newElement("div", "col-lg-0 mb-2 mb-sm-0", divItemRow);
         const divItemRowCol10 = IceAge2019.newElement("div", "col-lg-10 mb-2 mb-sm-0", divItemRow);
         const divItemInputGroup = IceAge2019.newElement("div", "input-group", divItemRowCol10);
         const inputItemName = IceAge2019.newElement("input", "form-control", divItemInputGroup);

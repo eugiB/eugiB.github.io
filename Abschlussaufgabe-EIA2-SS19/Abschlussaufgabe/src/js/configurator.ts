@@ -76,7 +76,7 @@ namespace IceAge2019 {
 
         const divCategory: HTMLDivElement = <HTMLDivElement>newElement("div", "category mb-5 border-bottom pb-2", divAllCategories);
         const divCategoryRow: HTMLDivElement = <HTMLDivElement>newElement("div", "category-row row py-2 mb-3", divCategory);
-        const divRowCol: HTMLDivElement = <HTMLDivElement>newElement("div", "col-12  col-sm-9 mb-2 mb-sm-0", divCategoryRow);
+        const divRowCol: HTMLDivElement = <HTMLDivElement>newElement("div", "col-12 col-xl-9 mb-2 mb-sm-0", divCategoryRow);
         const divInputGroup: HTMLDivElement = <HTMLDivElement>newElement("div", "input-group input-group-sm", divRowCol);
 
         const inputCategoryName: HTMLInputElement = <HTMLInputElement>newElement("input", "form-control", divInputGroup);
@@ -128,7 +128,7 @@ namespace IceAge2019 {
 
         _targetWrapper.insertBefore(divItemRow, _targetWrapper.children[(_targetWrapper.children.length - 1)]);
 
-        const divItemRowCol: HTMLDivElement = <HTMLDivElement>newElement("div", "col-lg-0 mb-2 mb-sm-0", divItemRow);
+        const divItemRowCol0: HTMLDivElement = <HTMLDivElement>newElement("div", "col-lg-0 mb-2 mb-sm-0", divItemRow);
         const divItemRowCol10: HTMLDivElement = <HTMLDivElement>newElement("div", "col-lg-10 mb-2 mb-sm-0", divItemRow);
         const divItemInputGroup: HTMLDivElement = <HTMLDivElement>newElement("div", "input-group", divItemRowCol10);
 
