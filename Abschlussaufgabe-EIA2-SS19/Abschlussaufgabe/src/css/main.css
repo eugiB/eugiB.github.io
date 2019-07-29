@@ -27,7 +27,7 @@
   z-index: 200; }
 
 .modal-overlay {
-  z-index: 100; }
+  z-index: 300; }
 
 .border-thick {
   border-width: 2px !important; }
