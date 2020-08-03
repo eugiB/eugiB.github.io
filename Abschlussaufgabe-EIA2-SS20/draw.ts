@@ -4,14 +4,12 @@ export class Draw {
 
 public x: number;
 public y: number;
-public xPos: number;
-public yPos: number;
 public xSpeed: number;
 public ySpeed: number;
 
 
 
-public move(xPos: number, yPos: number, xSpeed: number, ySpeed: number): any {
+move(): void {
 //
 }
 
@@ -20,11 +18,17 @@ update(): void {
     //
 }
 
-draw(): void {
+draw2(): void {
     //
 }
 
+animate(): void {
+    //
+}
 
+delete(): void{
+    //
+}
 
 public set(_x: number, _y: number): void {
     this.x = _x;

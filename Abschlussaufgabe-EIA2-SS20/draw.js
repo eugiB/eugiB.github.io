@@ -4,13 +4,19 @@ var PaintEIA2;
         constructor(_x, _y) {
             this.set(_x, _y);
         }
-        move(xPos, yPos, xSpeed, ySpeed) {
+        move() {
             //
         }
         update() {
             //
         }
-        draw() {
+        draw2() {
+            //
+        }
+        animate() {
+            //
+        }
+        delete() {
             //
         }
         set(_x, _y) {

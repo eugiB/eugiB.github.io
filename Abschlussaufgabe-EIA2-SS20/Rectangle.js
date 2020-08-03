@@ -9,13 +9,12 @@ var PaintEIA2;
         return color;
     }
     PaintEIA2.getRandomColor = getRandomColor;
-    class Rectangle {
-        constructor(_size, _position) {
+    class Rectangle extends PaintEIA2.Draw {
+        constructor() {
+            super(...arguments);
             this.w = 90;
             this.h = 90;
             this.r = 45;
-            this.position = _position;
-            this.size = _size;
         }
         draw() {
             PaintEIA2.crc2.beginPath();
@@ -26,20 +25,20 @@ var PaintEIA2;
             PaintEIA2.crc2.scale(this.size, this.size);
             PaintEIA2.crc2.restore();
             PaintEIA2.crc2.closePath();
-            return;
         }
         draw2() {
             var time = new Date();
             PaintEIA2.crc2.restore();
             PaintEIA2.crc2.beginPath();
-            PaintEIA2.crc2.translate(this.position.x - 45, this.position.y - 45);
+            PaintEIA2.crc2.translate(this.x - 45, this.y - 45);
             PaintEIA2.crc2.rotate(((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000) * time.getMilliseconds());
             PaintEIA2.crc2.fillStyle = getRandomColor();
             PaintEIA2.crc2.fillRect(0, 0, this.w, this.h);
-            PaintEIA2.crc2.translate(this.position.x - 45, this.position.y - 45);
+            PaintEIA2.crc2.translate(this.x - 45, this.y - 45);
             PaintEIA2.crc2.scale(this.size, this.size);
             PaintEIA2.crc2.restore();
             PaintEIA2.crc2.closePath();
+            PaintEIA2.crc2.save();
         }
     }
     PaintEIA2.Rectangle = Rectangle;
