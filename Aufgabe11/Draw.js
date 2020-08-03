@@ -1,15 +1,11 @@
 var a11;
 (function (a11) {
-    class draw {
+    // tslint:disable-next-line: class-name
+    class Static {
+        // tslint:disable-next-line: no-empty
         draw() {
         }
-        move() {
-        }
-        moveDown() {
-        }
-        moveUp() {
-        }
     }
-    a11.draw = draw;
+    a11.Static = Static;
 })(a11 || (a11 = {}));
 //# sourceMappingURL=Draw.js.map

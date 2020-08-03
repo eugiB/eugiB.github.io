@@ -1,6 +1,7 @@
 var a11;
 (function (a11) {
     window.addEventListener("load", init);
+    let moveables = [];
     let objects = [];
     let imagedata;
     function init() {
@@ -9,21 +10,23 @@ var a11;
         drawSky();
         drawHill();
         drawSun();
-        generateTrees();
-        generateSnow();
         drawCloud1();
         drawCloud2();
         drawCloud3();
-        generateChild();
+        generateTrees();
+        generateSnow();
+        //generateBirdo();
         imagedata = a11.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        update();
         function drawSky() {
-            a11.crc2.fillStyle = "#00b0ff";
-            a11.crc2.fillRect(0, 0, a11.crc2.canvas.width, 110);
+            var grd = a11.crc2.createLinearGradient(0, 0, 0, 400);
+            grd.addColorStop(0, "#00d4ff");
+            grd.addColorStop(1, "#2121a1");
+            a11.crc2.fillStyle = grd;
+            a11.crc2.fillRect(0, 0, 1300, 400);
+            a11.crc2.restore();
             a11.crc2.beginPath();
-            a11.crc2.moveTo(0, 110);
-            a11.crc2.lineTo(0, 350);
-            a11.crc2.lineTo(350, 110);
+            a11.crc2.moveTo(0, 400);
+            a11.crc2.lineTo(0, 700);
             a11.crc2.lineTo(0, 110);
             a11.crc2.closePath();
             a11.crc2.fill();
@@ -31,17 +34,15 @@ var a11;
         function drawHill() {
             a11.crc2.lineWidth = 1;
             a11.crc2.beginPath();
-            a11.crc2.moveTo(350, 110);
-            a11.crc2.lineTo(0, 350);
+            a11.crc2.moveTo(0, 400);
+            a11.crc2.lineTo(1300, 400);
             a11.crc2.closePath();
-            a11.crc2.stroke();
             a11.crc2.beginPath();
-            a11.crc2.moveTo(0, 600);
-            a11.crc2.lineTo(700, 600);
-            a11.crc2.moveTo(700, 600);
+            a11.crc2.moveTo(0, 200);
+            a11.crc2.lineTo(1300, 400);
+            a11.crc2.moveTo(1300, 400);
             a11.crc2.closePath();
-            a11.crc2.lineWidth = 2;
-            a11.crc2.fill();
+            a11.crc2.lineWidth = 1;
         }
         function drawSun() {
             let _x = 70;
@@ -81,33 +82,54 @@ var a11;
             a11.crc2.fillStyle = "#FFFFFF";
             a11.crc2.fill();
         }
-        function update() {
-            a11.crc2.putImageData(imagedata, 0, 0);
-            window.setTimeout(update, 1000 / 30);
-            for (let i = 0; i < objects.length; i++) {
-                let object = objects[i];
-                object.draw();
-                object.move();
-            }
-        }
         function generateTrees() {
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 8; i++) {
                 let tree = new a11.Tree();
                 objects.push(tree);
             }
+            console.log("Treees");
         }
         function generateSnow() {
-            for (let i = 0; i < 100; i++) {
+            let nFlakes = 100;
+            for (let i = 0; i < nFlakes; i++) {
                 let snowflake = new a11.Snow();
-                objects.push(snowflake);
+                moveables.push(snowflake);
             }
         }
-        function generateChild() {
+        function generateBirdo() {
             for (let i = 0; i < 8; i++) {
-                let child = new a11.Child();
-                objects.push(child);
+                let bird = new a11.Birdo();
+                moveables.push(bird);
             }
         }
+        function update(_backgroundData) {
+            a11.crc2.putImageData(_backgroundData, 0, 0);
+            for (let moveable of moveables) {
+                if (moveable instanceof a11.Snow) {
+                    moveable.move();
+                    moveable.draw();
+                }
+                if (moveable instanceof a11.Birdo) {
+                    moveable.move();
+                    moveable.draw();
+                }
+            }
+        }
+        /*
+                function update(): void {
+                    crc2.putImageData(imagedata, 0, 0);
+                    window.setTimeout(update, 1000 / 30);
+        
+        
+                    for (let moveables of moveable) {
+                        object.move();
+                        console.log("TEST");
+                    }
+        
+                    for (let object of objects) {
+                        object.draw();
+                    }
+                } */
     }
 })(a11 || (a11 = {}));
 //# sourceMappingURL=Aufgabe11.js.map

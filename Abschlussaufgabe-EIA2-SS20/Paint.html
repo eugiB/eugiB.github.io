@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="draw.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Rectangle.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Triangle.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Circle.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <title>Paint</title>
+</head>
+
+<body id="Body">
+
+    <div id="Screen">
+        <canvas id="canvas" width="1000" height="700"></canvas>
+        
+        <div id="overlay">
+            <button id="restart">New</button>
+            <div id="width">
+            <input type="range" min="1" max="1000" value="900" id="widthSlider">
+            <p id="widthVal"></p>
+            </div>
+            <div id="height">
+            <input type="range" min="1" max="600" value="550" id="heightSlider">
+            <p id="heightVal"></p>
+            </div>
+            <div id="color">
+            <input type="color" id="yourColor" name="Pick your color!" value="#FFFFFF">Color</input></div>
+            <button id="loadData">Load</button>
+            <button id="deleteObj">Delete Object</button>
+
+
+        
+    </div>
+
+
+
+
+
+</body>
+</html>

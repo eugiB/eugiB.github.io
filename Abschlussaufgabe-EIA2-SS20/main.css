@@ -1,0 +1,28 @@
+.Options {
+float:left;
+}
+
+#width {
+    float: right;
+    margin-right: 20%;
+}
+
+#height {
+    float: right;
+    margin-right: 20%;
+}
+
+canvas {
+    float: left;
+    border-style: solid;
+    background-color: rgb(39, 39, 39);
+}
+
+#color {
+    float:right;
+    margin-right: 24%;
+}
+
+#width {
+
+}
