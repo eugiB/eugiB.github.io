@@ -1,12 +1,6 @@
 namespace PaintEIA2 {
 
     window.addEventListener("load", handleLoad);
-    window.addEventListener("mouseup", handleMouseup);
-    window.addEventListener("mousedown", handleMousedown);
-    // window.addEventListener("mousedown", handleMousemoveObject);
-    // window.addEventListener("mousedown", handleMousemoveTriangle);
-    // window.addEventListener("mousedown", handleMousemoveCircle);
-    // window.addEventListener("mousedown", handleMousemoveWdrop);
 
 
     export let canvas: HTMLCanvasElement;
@@ -33,7 +27,6 @@ namespace PaintEIA2 {
     let heartPresent: boolean = false;
     let heaArrayPos: number;
     let dragged: boolean = false;
-    let objectChosen: boolean = false;
     export let triangleArray: Triangle[] = [];
     export let rectangleArray: Rectangle[] = [];
     export let circleArray: Circle[] = [];
@@ -51,6 +44,8 @@ namespace PaintEIA2 {
         widthSlider.addEventListener("change", drawBackground);
         heightSlider.addEventListener("change", drawBackground);
         yourColor.addEventListener("change", drawBackground);
+        window.addEventListener("mouseup", handleMouseup);
+        window.addEventListener("mousedown", handleMousedown);
 
         canvas = document.querySelector("canvas");
         if (!canvas)
@@ -131,7 +126,6 @@ namespace PaintEIA2 {
 
         drawButtons();
         drawStopmoveButton();
-        drawmoveButton();
         drawRectangleButton();
         drawTriangleButton();
         drawCircleButton();
@@ -142,6 +136,15 @@ namespace PaintEIA2 {
 
     }
 
+
+    export function getRandomColor(): string {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 
 
 
@@ -356,19 +359,7 @@ namespace PaintEIA2 {
         crc2.restore();
     }
 
-    let xButton7: number = 800;
-    let yButton7: number = 635;
-    let wButton7: number = 150;
-    let hButton7: number = 30;
 
-    function drawmoveButton(): void {
-        crc2.save();
-        crc2.restore();
-        crc2.font = "25px Arial";
-        crc2.fillStyle = "white";
-        crc2.fillText("MOVE POS", 800, 660);
-        crc2.restore();
-    }
 
 
     function handleMousedown(_client: MouseEvent): void {
@@ -468,7 +459,6 @@ namespace PaintEIA2 {
             _client.offsetY > yButton6 &&
             _client.offsetY < yButton6 + hButton6) {
             
-            objectChosen = false;
             rectanglePresent = false;
             trianglePresent = false;
             circlePresent = false;
@@ -502,7 +492,6 @@ namespace PaintEIA2 {
                 window.removeEventListener("mousedown", handleMousemoveHeart);
 
                 rectanglePresent = true;
-                objectChosen = true;
                 currentRectangle = rectangle;
                 dragged = true;
                 recArrayPos = rectangleArray.indexOf(currentRectangle);
@@ -529,7 +518,6 @@ namespace PaintEIA2 {
                 window.removeEventListener("mousedown", handleMousemoveWdrop);
                 window.removeEventListener("mousedown", handleMousemoveHeart);
 
-                objectChosen = true;
                 currentTriangle = triangle;
                 trianglePresent = true;
                 dragged = true;
@@ -554,7 +542,6 @@ namespace PaintEIA2 {
                 window.removeEventListener("mousedown", handleMousemoveWdrop);
                 window.removeEventListener("mousedown", handleMousemoveHeart);
 
-                objectChosen = true;
                 currentCircle = circle;
                 circlePresent = true;
                 dragged = true;
@@ -580,7 +567,6 @@ namespace PaintEIA2 {
                 window.removeEventListener("mousedown", handleMousemoveHeart);
 
                 
-                objectChosen = true;
                 currentWdrop = wdrop;
                 wdropPresent = true;
                 dragged = true;
@@ -605,7 +591,6 @@ namespace PaintEIA2 {
                 window.removeEventListener("mousedown", handleMousemoveCircle);
                 window.removeEventListener("mousedown", handleMousemoveWdrop);
 
-                objectChosen = true;
                 currentHeart = heart;
                 heartPresent = true;
                 dragged = true;

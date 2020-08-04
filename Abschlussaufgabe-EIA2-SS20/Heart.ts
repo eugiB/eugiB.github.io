@@ -5,7 +5,6 @@ namespace PaintEIA2 {
         size: number;
         w: number = 160;
         h: number = 120;
-        r: number = 105;
         scaleVal: number;
 
 

@@ -5,7 +5,6 @@ var PaintEIA2;
             super(...arguments);
             this.w = 160;
             this.h = 120;
-            this.r = 105;
         }
         move() {
             this.initPos = 50;

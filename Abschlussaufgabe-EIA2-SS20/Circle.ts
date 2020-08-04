@@ -3,8 +3,8 @@ namespace PaintEIA2 {
     export class Circle extends Draw {
         position: Draw;
         size: number;
-        w: number = 90;
-        h: number = 90;
+        w: number = 40;
+        h: number = 40;
         radius: number = 10;
 
 

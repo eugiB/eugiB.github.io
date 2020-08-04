@@ -3,9 +3,8 @@ var PaintEIA2;
     class Triangle extends PaintEIA2.Draw {
         constructor() {
             super(...arguments);
-            this.w = 90;
-            this.h = 90;
-            this.r = 45;
+            this.w = 50;
+            this.h = 50;
         }
         move() {
             this.xSpeed = 5;

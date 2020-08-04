@@ -3,8 +3,8 @@ var PaintEIA2;
     class Circle extends PaintEIA2.Draw {
         constructor() {
             super(...arguments);
-            this.w = 90;
-            this.h = 90;
+            this.w = 40;
+            this.h = 40;
             this.radius = 10;
         }
         animate() {

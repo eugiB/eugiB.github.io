@@ -3,9 +3,8 @@ namespace PaintEIA2 {
     export class Triangle extends Draw {
         position: Draw;
         size: number;
-        w: number = 90;
-        h: number = 90;
-        r: number = 45;
+        w: number = 50;
+        h: number = 50;
 
 
 
