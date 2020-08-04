@@ -9,15 +9,21 @@ var PaintEIA2;
     let yourColor;
     let currentRectangle;
     let rectanglePresent = false;
+    let recArrayPos;
     let currentTriangle;
     let trianglePresent = false;
+    let triArrayPos;
     let currentCircle;
     let circlePresent = false;
+    let cirArrayPos;
     let currentWdrop;
     let wdropPresent = false;
+    let wdrArrayPos;
     let currentHeart;
     let heartPresent = false;
+    let heaArrayPos;
     let dragged = false;
+    let objectChosen = false;
     PaintEIA2.triangleArray = [];
     PaintEIA2.rectangleArray = [];
     PaintEIA2.circleArray = [];
@@ -73,6 +79,7 @@ var PaintEIA2;
         if (PaintEIA2.heartArray) {
             for (let heart = 0; heart < PaintEIA2.heartArray.length; heart++) {
                 PaintEIA2.heartArray[heart].draw2();
+                PaintEIA2.heartArray[heart].move();
             }
         }
     }
@@ -296,7 +303,6 @@ var PaintEIA2;
             let rectangle = new PaintEIA2.Rectangle(_client.offsetX, _client.offsetY);
             currentRectangle = rectangle;
             PaintEIA2.rectangleArray.push(rectangle);
-            rectanglePresent = true;
             handleMousemoveObject(_client);
             window.addEventListener("mouseup", handleMouseup);
             window.addEventListener("mousemove", handleMousemoveObject);
@@ -308,7 +314,6 @@ var PaintEIA2;
             let triangle = new PaintEIA2.Triangle(_client.offsetX, _client.offsetX);
             currentTriangle = triangle;
             PaintEIA2.triangleArray.push(triangle);
-            trianglePresent = true;
             handleMousemoveTriangle(_client);
             window.addEventListener("mouseup", handleMouseup);
             window.addEventListener("mousemove", handleMousemoveTriangle);
@@ -320,7 +325,6 @@ var PaintEIA2;
             let circle = new PaintEIA2.Circle(_client.offsetX, _client.offsetY);
             currentCircle = circle;
             PaintEIA2.circleArray.push(circle);
-            circlePresent = true;
             handleMousemoveCircle(_client);
             window.addEventListener("mouseup", handleMouseup);
             window.addEventListener("mousemove", handleMousemoveCircle);
@@ -333,7 +337,6 @@ var PaintEIA2;
             let wdrop = new PaintEIA2.Wdrop(_client.offsetX, _client.offsetY);
             currentWdrop = wdrop;
             PaintEIA2.wdropArray.push(wdrop);
-            wdropPresent = true;
             handleMousemoveWdrop(_client);
             window.addEventListener("mouseup", handleMouseup);
             window.addEventListener("mousemove", handleMousemoveWdrop);
@@ -346,7 +349,6 @@ var PaintEIA2;
             let heart = new PaintEIA2.Heart(_client.offsetX, _client.offsetY);
             currentHeart = heart;
             PaintEIA2.heartArray.push(heart);
-            heartPresent = true;
             handleMousemoveHeart(_client);
             window.addEventListener("mouseup", handleMouseup);
             window.addEventListener("mousemove", handleMousemoveHeart);
@@ -356,6 +358,12 @@ var PaintEIA2;
             _client.offsetX < xButton6 + wButton6 &&
             _client.offsetY > yButton6 &&
             _client.offsetY < yButton6 + hButton6) {
+            objectChosen = false;
+            rectanglePresent = false;
+            trianglePresent = false;
+            circlePresent = false;
+            wdropPresent = false;
+            heartPresent = false;
             window.removeEventListener("mousedown", handleMousemoveObject);
             window.removeEventListener("mousedown", handleMousemoveTriangle);
             window.removeEventListener("mousedown", handleMousemoveCircle);
@@ -365,8 +373,7 @@ var PaintEIA2;
             dragged = false;
         }
         for (let rectangle of PaintEIA2.rectangleArray) {
-            if (rectanglePresent == true &&
-                _client.offsetX > rectangle.x - rectangle.w / 2 &&
+            if (_client.offsetX > rectangle.x - rectangle.w / 2 &&
                 _client.offsetX < rectangle.x + rectangle.w / 2 &&
                 _client.offsetY > rectangle.y - rectangle.h / 2 &&
                 _client.offsetY < rectangle.y + rectangle.h / 2) {
@@ -377,13 +384,14 @@ var PaintEIA2;
                 window.removeEventListener("mousedown", handleMousemoveWdrop);
                 window.removeEventListener("mousedown", handleMousemoveHeart);
                 rectanglePresent = true;
+                objectChosen = true;
                 currentRectangle = rectangle;
                 dragged = true;
+                recArrayPos = PaintEIA2.rectangleArray.indexOf(currentRectangle);
             }
         }
         for (let triangle of PaintEIA2.triangleArray) {
-            if (trianglePresent == true &&
-                _client.offsetX > triangle.x - triangle.w / 2 &&
+            if (_client.offsetX > triangle.x - triangle.w / 2 &&
                 _client.offsetX < triangle.x + triangle.w / 2 &&
                 _client.offsetY > triangle.y - triangle.h / 2 &&
                 _client.offsetY < triangle.y + triangle.h / 2) {
@@ -393,14 +401,15 @@ var PaintEIA2;
                 window.removeEventListener("mousedown", handleMousemoveCircle);
                 window.removeEventListener("mousedown", handleMousemoveWdrop);
                 window.removeEventListener("mousedown", handleMousemoveHeart);
+                objectChosen = true;
                 currentTriangle = triangle;
+                trianglePresent = true;
                 dragged = true;
-                rectanglePresent = true;
+                triArrayPos = PaintEIA2.triangleArray.indexOf(currentTriangle);
             }
         }
         for (let circle of PaintEIA2.circleArray) {
-            if (circlePresent == true &&
-                _client.offsetX > circle.x - circle.w / 2 &&
+            if (_client.offsetX > circle.x - circle.w / 2 &&
                 _client.offsetX < circle.x + circle.w / 2 &&
                 _client.offsetY > circle.y - circle.h / 2 &&
                 _client.offsetY < circle.y + circle.h / 2) {
@@ -410,14 +419,15 @@ var PaintEIA2;
                 window.removeEventListener("mousedown", handleMousemoveTriangle);
                 window.removeEventListener("mousedown", handleMousemoveWdrop);
                 window.removeEventListener("mousedown", handleMousemoveHeart);
+                objectChosen = true;
                 currentCircle = circle;
                 circlePresent = true;
                 dragged = true;
+                cirArrayPos = PaintEIA2.circleArray.indexOf(currentCircle);
             }
         }
         for (let wdrop of PaintEIA2.wdropArray) {
-            if (wdropPresent == true &&
-                _client.offsetX > wdrop.x - wdrop.w / 2 &&
+            if (_client.offsetX > wdrop.x - wdrop.w / 2 &&
                 _client.offsetX < wdrop.x + wdrop.w / 2 &&
                 _client.offsetY > wdrop.y - wdrop.h / 2 &&
                 _client.offsetY < wdrop.y + wdrop.h / 2) {
@@ -427,26 +437,30 @@ var PaintEIA2;
                 window.removeEventListener("mousedown", handleMousemoveTriangle);
                 window.removeEventListener("mousedown", handleMousemoveCircle);
                 window.removeEventListener("mousedown", handleMousemoveHeart);
+                objectChosen = true;
                 currentWdrop = wdrop;
                 wdropPresent = true;
                 dragged = true;
+                wdrArrayPos = PaintEIA2.wdropArray.indexOf(currentWdrop);
             }
         }
         for (let heart of PaintEIA2.heartArray) {
-            if (wdropPresent == true &&
-                _client.offsetX > heart.x - heart.w / 2 &&
+            if (_client.offsetX > heart.x - heart.w / 2 &&
                 _client.offsetX < heart.x + heart.w / 2 &&
                 _client.offsetY > heart.y - heart.h / 2 &&
                 _client.offsetY < heart.y + heart.h / 2) {
+                window.addEventListener("mousemove", handleMousemoveHeart);
                 window.addEventListener("mousedown", handleMousemoveHeart);
                 window.addEventListener("mouseup", handleMouseup);
                 window.removeEventListener("mousedown", handleMousemoveObject);
                 window.removeEventListener("mousedown", handleMousemoveTriangle);
                 window.removeEventListener("mousedown", handleMousemoveCircle);
                 window.removeEventListener("mousedown", handleMousemoveWdrop);
+                objectChosen = true;
                 currentHeart = heart;
                 heartPresent = true;
                 dragged = true;
+                heaArrayPos = PaintEIA2.heartArray.indexOf(currentHeart);
             }
         }
     }
@@ -509,58 +523,44 @@ var PaintEIA2;
     PaintEIA2.handleMousemoveHeart = handleMousemoveHeart;
     function deleteObject() {
         if (rectanglePresent == true) {
-            PaintEIA2.rectangleArray.pop();
+            PaintEIA2.rectangleArray.splice(recArrayPos, 1);
             // console.log("izzda");
         }
         if (trianglePresent == true) {
-            PaintEIA2.triangleArray.pop();
+            PaintEIA2.triangleArray.splice(triArrayPos, 1);
         }
         if (circlePresent == true) {
-            PaintEIA2.circleArray.pop();
+            PaintEIA2.circleArray.splice(cirArrayPos, 1);
         }
         if (wdropPresent == true) {
-            PaintEIA2.wdropArray.pop();
+            PaintEIA2.wdropArray.splice(wdrArrayPos, 1);
         }
         if (heartPresent == true) {
-            PaintEIA2.heartArray.pop();
+            PaintEIA2.heartArray.splice(heaArrayPos, 1);
         }
     }
     PaintEIA2.deleteObject = deleteObject;
     function handleMouseup(_client) {
         dragged = true;
-        if (dragged) {
-            setTimeout(() => {
-                dragged = false;
-            }, 10);
-        }
-        for (let rectangle of PaintEIA2.rectangleArray) {
-            currentRectangle = rectangle;
-            rectanglePresent = true;
+        for (let currentRectangle of PaintEIA2.rectangleArray) {
             currentRectangle.draw2();
             window.addEventListener("mousedown", handleMousemoveObject);
         }
-        for (let triangle of PaintEIA2.triangleArray) {
-            currentTriangle = triangle;
-            trianglePresent = true;
+        for (let currentTriangle of PaintEIA2.triangleArray) {
             currentTriangle.draw2();
             window.addEventListener("mousedown", handleMousemoveTriangle);
         }
-        for (let circle of PaintEIA2.circleArray) {
-            currentCircle = circle;
-            circlePresent = true;
+        for (let currentCircle of PaintEIA2.circleArray) {
             currentCircle.draw2();
             window.addEventListener("mousedown", handleMousemoveCircle);
         }
-        for (let wdrop of PaintEIA2.wdropArray) {
-            currentWdrop = wdrop;
-            wdropPresent = true;
+        for (let currentWdrop of PaintEIA2.wdropArray) {
             currentWdrop.draw2();
             window.addEventListener("mousedown", handleMousemoveWdrop);
         }
-        for (let heart of PaintEIA2.heartArray) {
-            currentHeart = heart;
-            heartPresent = true;
+        for (let currentHeart of PaintEIA2.heartArray) {
             currentHeart.draw2();
+            window.removeEventListener("mousemove", handleMousemoveHeart);
             window.addEventListener("mousedown", handleMousemoveHeart);
         }
         window.removeEventListener("mousemove", handleMousemoveObject);

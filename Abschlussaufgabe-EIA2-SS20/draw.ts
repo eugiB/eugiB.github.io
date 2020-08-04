@@ -6,6 +6,9 @@ public x: number;
 public y: number;
 public xSpeed: number;
 public ySpeed: number;
+public xScale: number = 3;
+public yScale: number = 3;
+public initPos: number;
 
 
 
@@ -26,7 +29,7 @@ animate(): void {
     //
 }
 
-delete(): void{
+delete(): void {
     //
 }
 

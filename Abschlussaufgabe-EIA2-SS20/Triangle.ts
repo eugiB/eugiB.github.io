@@ -9,10 +9,10 @@ namespace PaintEIA2 {
 
 
 
-        move(): void {
+        move(): void { 
             this.xSpeed = 5;
             this.x = this.x + this.xSpeed;
-            if (this.x > (width - 65)) {
+            if (this.x > (width)) {
                 this.xSpeed = -5;
                 this.x = 0 + this.xSpeed;
             }
@@ -30,6 +30,7 @@ namespace PaintEIA2 {
             crc2.restore();
             crc2.beginPath();
             crc2.translate(this.x, this.y);
+            crc2.scale(0.4, 0.4);
             crc2.moveTo(0, 0);
             crc2.lineTo(-65, 90);
             crc2.lineTo(65, 90);
@@ -38,6 +39,7 @@ namespace PaintEIA2 {
             crc2.restore();
             crc2.fillStyle = getRandomColor();
             crc2.fill();
+            crc2.closePath();
             crc2.save();
 
         }

@@ -5,11 +5,11 @@ namespace PaintEIA2 {
         size: number;
         w: number = 90;
         h: number = 90;
-        radius: number = 19;
+        radius: number = 10;
 
 
 
-        update(): void {
+        animate(): void {
             setInterval(this.draw2, 100);
             this.draw2();
         }
@@ -26,11 +26,11 @@ namespace PaintEIA2 {
             crc2.restore();
 
 
-            if (this.radius == 19) {
-                this.radius += 20;
+            if (this.radius == 10) {
+                this.radius += 10;
             }
-            else if (this.radius == 39) {
-                this.radius -= 20;
+            else if (this.radius == 20) {
+                this.radius -= 10;
             }
             crc2.save();
         }

@@ -2,6 +2,8 @@ var PaintEIA2;
 (function (PaintEIA2) {
     class Draw {
         constructor(_x, _y) {
+            this.xScale = 3;
+            this.yScale = 3;
             this.set(_x, _y);
         }
         move() {

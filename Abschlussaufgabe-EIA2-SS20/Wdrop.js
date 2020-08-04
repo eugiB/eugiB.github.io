@@ -9,8 +9,7 @@ var PaintEIA2;
         move() {
             this.ySpeed = 5;
             this.y = this.y + this.ySpeed;
-            if (this.y > PaintEIA2.height) {
-                this.ySpeed = -5;
+            if (this.y > (PaintEIA2.height - 30)) {
                 this.y = 0 + this.ySpeed;
             }
             else {

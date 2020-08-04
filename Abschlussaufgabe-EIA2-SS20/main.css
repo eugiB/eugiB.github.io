@@ -1,15 +1,14 @@
-.Options {
-float:left;
-}
+
 
 #width {
     float: right;
-    margin-right: 20%;
+    margin-right: 10%;
 }
 
 #height {
     float: right;
-    margin-right: 20%;
+        
+    margin-right: 10%;
 }
 
 canvas {
@@ -18,11 +17,91 @@ canvas {
     background-color: rgb(39, 39, 39);
 }
 
-#color {
+#yourcolor {
     float:right;
-    margin-right: 24%;
+    margin-right: 30%;
 }
 
-#width {
-
+#loadData {
+    float: left;
+    margin-right: 10%;
 }
+
+#restart {
+	box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	background-color:#f24537;
+	border-radius:7px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:21px;
+    font-weight:bold;
+    margin-left: 0%;
+	padding:12px 33px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+}
+#restart:hover {
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	background-color:#c62d1f;
+}
+#restart:active {
+	position:relative;
+	top:1px;
+}
+
+#loadData {
+	box-shadow:inset 0px 1px 0px 0px #3dc21b;
+	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	background-color:#44c767;
+	border-radius:7px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:21px;
+    font-weight:bold;
+    margin-right: 20%;
+	padding:13px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#loadData:hover {
+	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+	background-color:#5cbf2a;
+}
+#loadData:active {
+	position:relative;
+	top:1px;
+}
+
+#deleteObj {
+	box-shadow:inset 0px 1px 0px 0px #e184f3;
+	background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+	background-color:#c123de;
+	border-radius:7px;
+	border:1px solid #a511c0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:21px;
+    padding:13px 26px;
+    margin-right: 20%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9b14b3;
+}
+#deleteObj:hover {
+	background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+	background-color:#a20dbd;
+}
+#deleteObj:active {
+	position:relative;
+	top:1px;
+}
+
+        

@@ -5,9 +5,9 @@ var PaintEIA2;
             super(...arguments);
             this.w = 90;
             this.h = 90;
-            this.radius = 19;
+            this.radius = 10;
         }
-        update() {
+        animate() {
             setInterval(this.draw2, 100);
             this.draw2();
         }
@@ -19,11 +19,11 @@ var PaintEIA2;
             PaintEIA2.crc2.arc(0, 0, this.radius, 0, 2 * Math.PI);
             PaintEIA2.crc2.fill();
             PaintEIA2.crc2.restore();
-            if (this.radius == 19) {
-                this.radius += 20;
+            if (this.radius == 10) {
+                this.radius += 10;
             }
-            else if (this.radius == 39) {
-                this.radius -= 20;
+            else if (this.radius == 20) {
+                this.radius -= 10;
             }
             PaintEIA2.crc2.save();
         }

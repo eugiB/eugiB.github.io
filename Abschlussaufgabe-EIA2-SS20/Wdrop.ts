@@ -10,8 +10,7 @@ namespace PaintEIA2 {
         move(): void {
             this.ySpeed = 5;
             this.y = this.y + this.ySpeed;
-            if (this.y > height) {
-                this.ySpeed = -5;
+            if (this.y > (height - 30)) {
                 this.y = 0 + this.ySpeed;
             }
 
