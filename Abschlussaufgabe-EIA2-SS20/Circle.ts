@@ -8,7 +8,6 @@ namespace PaintEIA2 {
         radius: number = 10;
 
 
-
         animate(): void {
             setInterval(this.draw2, 100);
             this.draw2();

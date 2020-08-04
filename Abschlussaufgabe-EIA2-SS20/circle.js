@@ -30,4 +30,4 @@ var PaintEIA2;
     }
     PaintEIA2.Circle = Circle;
 })(PaintEIA2 || (PaintEIA2 = {}));
-//# sourceMappingURL=circle.js.map
+//# sourceMappingURL=Circle.js.map
