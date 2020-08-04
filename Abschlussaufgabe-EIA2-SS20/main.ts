@@ -729,6 +729,7 @@ namespace PaintEIA2 {
 
             window.addEventListener("mousedown", handleMousemoveHeart);
         }
+        
 
         window.removeEventListener("mousemove", handleMousemoveObject);
         window.removeEventListener("mousemove", handleMousemoveTriangle);

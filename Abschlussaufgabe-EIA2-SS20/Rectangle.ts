@@ -12,6 +12,7 @@ namespace PaintEIA2 {
 
 
         draw2(): void {
+            
             var time = new Date();
             crc2.restore();
             crc2.beginPath();
